@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "94CD518618B55A8600BBB5CF"
+               BlueprintIdentifier = "9437AD1518B5B1D800AEE84F"
                BuildableName = "eatHarmony.app"
                BlueprintName = "eatHarmony"
                ReferencedContainer = "container:eatHarmony.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "94CD51AD18B55A8600BBB5CF"
+               BlueprintIdentifier = "9437AD3918B5B1D800AEE84F"
                BuildableName = "eatHarmonyTests.xctest"
                BlueprintName = "eatHarmonyTests"
                ReferencedContainer = "container:eatHarmony.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94CD518618B55A8600BBB5CF"
+            BlueprintIdentifier = "9437AD1518B5B1D800AEE84F"
             BuildableName = "eatHarmony.app"
             BlueprintName = "eatHarmony"
             ReferencedContainer = "container:eatHarmony.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94CD518618B55A8600BBB5CF"
+            BlueprintIdentifier = "9437AD1518B5B1D800AEE84F"
             BuildableName = "eatHarmony.app"
             BlueprintName = "eatHarmony"
             ReferencedContainer = "container:eatHarmony.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "94CD518618B55A8600BBB5CF"
+            BlueprintIdentifier = "9437AD1518B5B1D800AEE84F"
             BuildableName = "eatHarmony.app"
             BlueprintName = "eatHarmony"
             ReferencedContainer = "container:eatHarmony.xcodeproj">
