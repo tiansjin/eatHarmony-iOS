@@ -36,19 +36,26 @@
 }
 
 - (void)hideSearchBar {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:1.0f];
-    title.alpha = 0.0f;
-    [searchB setFrame:CGRectMake(0, -30, self.view.bounds.size.width, 150)];
-    [searchB setNeedsLayout];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:1.0
+                          delay:0.1
+                        options: UIViewAnimationOptionAllowAnimatedContent
+                     animations:^{
+                         [searchB setFrame:CGRectMake(0, -30, self.view.bounds.size.width, 150)];
+                         [searchB setNeedsLayout];
+
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"Search Clicked");
     [self hideSearchBar];
     food = [searchBar.text componentsSeparatedByString:@","];
-    [title removeFromSuperview];
+    [UIView setAnimationDuration:1.0f];
+    title.alpha = 0.0f;
+    [UIView commitAnimations];
+    //[title removeFromSuperview];
     [self.searchB resignFirstResponder];
 }
 
