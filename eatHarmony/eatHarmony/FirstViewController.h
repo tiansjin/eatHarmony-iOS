@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate>
+@interface FirstViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     UISearchBar *searchB;
-    UILabel *title;
+    UILabel *titleLabel;
+    UITableView *tableV;
     NSArray *food;
 }
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchB;
-@property (strong, nonatomic) IBOutlet UILabel *title;
-
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (retain, nonatomic) IBOutlet UITableView *tableV;
 @end
