@@ -16,8 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <searchBar contentMode="redraw" fixedFrame="YES" placeholder="bananas, spinach..." translatesAutoresizingMaskIntoConstraints="NO" id="RPn-sC-ncn">
                                 <rect key="frame" x="15" y="262" width="290" height="44"/>
+=======
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="eatHarmony" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-ve-WU7">
+                                <rect key="frame" x="20" y="82" width="280" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" placeholder="bananas, spinach..." translatesAutoresizingMaskIntoConstraints="NO" id="RPn-sC-ncn">
+                                <rect key="frame" x="0.0" y="149" width="320" height="44"/>
+>>>>>>> 0e702ffd3316216645a2b9d7b347697bb730ce88
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -25,17 +37,49 @@
                                     <outlet property="delegate" destination="2VE-Yg-loa" id="MbZ-WS-ILG"/>
                                 </connections>
                             </searchBar>
+<<<<<<< HEAD
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="0H8-oI-GSR">
                                 <rect key="frame" x="40" y="26" width="240" height="226"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+=======
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="FTu-xn-o3f">
+                                <rect key="frame" x="2" y="82" width="316" height="434"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2VE-Yg-loa" id="0Y3-Qv-FbY"/>
+                                    <outlet property="delegate" destination="2VE-Yg-loa" id="kgO-1L-iwf"/>
+                                </connections>
+                            </tableView>
+>>>>>>> 0e702ffd3316216645a2b9d7b347697bb730ce88
                         </subviews>
                         <color key="backgroundColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+<<<<<<< HEAD
+=======
+                        <constraints>
+                            <constraint firstItem="FTu-xn-o3f" firstAttribute="centerX" secondItem="RPn-sC-ncn" secondAttribute="centerX" id="BSk-7l-JBt"/>
+                            <constraint firstItem="FTu-xn-o3f" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="2" id="HXJ-dz-79h"/>
+                            <constraint firstItem="Zhg-ve-WU7" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="20" symbolic="YES" id="JQj-gp-vk2"/>
+                            <constraint firstItem="Zhg-ve-WU7" firstAttribute="top" secondItem="FTu-xn-o3f" secondAttribute="top" id="biz-2q-q0h"/>
+                            <constraint firstAttribute="trailing" secondItem="Zhg-ve-WU7" secondAttribute="trailing" constant="20" symbolic="YES" id="eHs-J5-0HT"/>
+                            <constraint firstItem="RPn-sC-ncn" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="hcr-TS-Fpt"/>
+                            <constraint firstItem="RPn-sC-ncn" firstAttribute="top" secondItem="Zhg-ve-WU7" secondAttribute="bottom" constant="25" id="kWl-ev-4gI"/>
+                            <constraint firstItem="e7M-RL-Gcz" firstAttribute="top" secondItem="FTu-xn-o3f" secondAttribute="bottom" constant="3" id="lju-Fh-rPF"/>
+                            <constraint firstItem="Zhg-ve-WU7" firstAttribute="centerX" secondItem="RPn-sC-ncn" secondAttribute="centerX" id="ryM-qu-mS7"/>
+                            <constraint firstItem="Zhg-ve-WU7" firstAttribute="top" secondItem="kty-6z-kez" secondAttribute="bottom" constant="62" id="wMk-F1-R9e"/>
+                        </constraints>
+>>>>>>> 0e702ffd3316216645a2b9d7b347697bb730ce88
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="searchB" destination="RPn-sC-ncn" id="lZX-WC-i0b"/>
+<<<<<<< HEAD
+=======
+                        <outlet property="tableV" destination="FTu-xn-o3f" id="VLZ-Si-IeC"/>
+                        <outlet property="titleLabel" destination="Zhg-ve-WU7" id="doO-mr-yeB"/>
+>>>>>>> 0e702ffd3316216645a2b9d7b347697bb730ce88
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qh2-T1-AhA" sceneMemberID="firstResponder"/>
