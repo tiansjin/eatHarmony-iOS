@@ -11,12 +11,12 @@
 @interface FirstViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     UISearchBar *searchB;
-    UILabel *titleLabel;
+    UIImageView *titleLabel;
     UITableView *tableV;
     NSArray *food;
 }
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchB;
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *titleLabel;
 @property (retain, nonatomic) IBOutlet UITableView *tableV;
 @end
