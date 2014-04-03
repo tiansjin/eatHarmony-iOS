@@ -17,6 +17,35 @@
 @synthesize titleLabel;
 @synthesize tableV;
 
+- (NSString*) getRecipeJson:(NSString*) search_term
+{ //Returns API calls for search query
+    NSString* key = @"dvxP3Ib8x153K71alv2yhXp8U349s103";
+    NSString* url = @"http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw=";
+    url = [url stringByAppendingString:(search_term)];
+    url = [url stringByAppendingString:(@"&api_key=")];
+    url = [url stringByAppendingString:(key)];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLResponse *response = nil;
+    NSString* output = nil;
+    NSString* ret = nil;
+    NSData *data = [NSURLConnection sendSynchronousRequest:request
+                                         returningResponse:&response
+                                                     error:nil];
+    if (data) { // Search succeeded!
+        output = [[NSString alloc] initWithData:data
+                                       encoding:NSUTF8StringEncoding] ;
+        NSLog(@"output:%@",output);
+        ret = output;
+    }
+    else { // search failed
+        ret = [output copy];
+    }
+    return ret;
+
+}
 
 - (void)viewDidLoad
 {
@@ -60,6 +89,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"Search Clicked");
+    [self getRecipeJson:@"bananas"];
     int prev = [food count];
     food = [searchBar.text componentsSeparatedByString:@","];
     int curr = [food count];
