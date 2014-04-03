@@ -466,6 +466,7 @@
 				9437AD4D18B5B1D800AEE84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9437AD4E18B5B1D800AEE84F /* Build configuration list for PBXNativeTarget "eatHarmonyTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +475,7 @@
 				9437AD5018B5B1D800AEE84F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
