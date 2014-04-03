@@ -17,8 +17,8 @@
 @synthesize titleLabel;
 @synthesize tableV;
 
-- (NSString*) getRecipeJson:(NSString*) search_term
-{ //Returns API calls for search query
+- (NSString*) searchResults:(NSString*) search_term
+{ //Returns API calls for search query in XML format
     NSString* key = @"dvxP3Ib8x153K71alv2yhXp8U349s103";
     NSString* url = @"http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw=";
     url = [url stringByAppendingString:(search_term)];
@@ -27,6 +27,7 @@
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     NSURLResponse *response = nil;
     NSString* output = nil;
@@ -44,7 +45,34 @@
         ret = [output copy];
     }
     return ret;
+}
 
+- (NSData*) stringToData:(NSString*) calendar_info
+{   // Converts json string format to data
+    NSData* data = [calendar_info dataUsingEncoding:NSUTF8StringEncoding];
+    return data;
+}
+
+- (NSDictionary*) dataToDictionary:(NSData*)recipe_info
+{
+    // Create NSDictionary from the JSON data
+    NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:recipe_info options:0 error:nil];
+    return jsonDictionary;
+}
+
+- (NSMutableArray*) getSummary:(NSDictionary*)recipe_info
+{
+    // Returns array of events on calendar
+    NSMutableArray* full_summary = [[NSMutableArray alloc] init];
+    // Create array of dictionaries with key "items"
+    NSArray* all_events = [recipe_info objectForKey:@"Results"];
+    // Create array of strings with key "summary";
+    for (NSDictionary *event in all_events)
+    {
+        NSString *title = [event objectForKey:@"Title"];
+        [full_summary addObject: summary];
+    }
+    return full_summary; // Returns summary of strings
 }
 
 - (void)viewDidLoad
@@ -89,7 +117,7 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     NSLog(@"Search Clicked");
-    [self getRecipeJson:@"bananas"];
+    [self searchResults:@"bananas"];
     int prev = [food count];
     food = [searchBar.text componentsSeparatedByString:@","];
     int curr = [food count];

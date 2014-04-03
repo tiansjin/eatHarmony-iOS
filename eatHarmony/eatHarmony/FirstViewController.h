@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Food.h"
 
 @interface FirstViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 {

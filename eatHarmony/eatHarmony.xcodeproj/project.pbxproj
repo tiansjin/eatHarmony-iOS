@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		615BC45818EE0EA100683D9B /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 615BC45718EE0EA100683D9B /* Food.m */; };
 		9437AD1A18B5B1D800AEE84F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437AD1918B5B1D800AEE84F /* Foundation.framework */; };
 		9437AD1C18B5B1D800AEE84F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437AD1B18B5B1D800AEE84F /* CoreGraphics.framework */; };
 		9437AD1E18B5B1D800AEE84F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9437AD1D18B5B1D800AEE84F /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		615BC45618EE0EA100683D9B /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
+		615BC45718EE0EA100683D9B /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 		9437AD1618B5B1D800AEE84F /* eatHarmony.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eatHarmony.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9437AD1918B5B1D800AEE84F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9437AD1B18B5B1D800AEE84F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,9 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9437AD1A18B5B1D800AEE84F /* Foundation.framework in Frameworks */,
 				9437AD1C18B5B1D800AEE84F /* CoreGraphics.framework in Frameworks */,
 				9437AD1E18B5B1D800AEE84F /* UIKit.framework in Frameworks */,
-				9437AD1A18B5B1D800AEE84F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,8 @@
 				9437AD2B18B5B1D800AEE84F /* Main.storyboard */,
 				9437AD2E18B5B1D800AEE84F /* FirstViewController.h */,
 				9437AD2F18B5B1D800AEE84F /* FirstViewController.m */,
+				615BC45618EE0EA100683D9B /* Food.h */,
+				615BC45718EE0EA100683D9B /* Food.m */,
 				9437AD3118B5B1D800AEE84F /* SecondViewController.h */,
 				9437AD3218B5B1D800AEE84F /* SecondViewController.m */,
 				9437AD3418B5B1D800AEE84F /* Images.xcassets */,
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				615BC45818EE0EA100683D9B /* Food.m in Sources */,
 				9437AD3318B5B1D800AEE84F /* SecondViewController.m in Sources */,
 				9437AD2A18B5B1D800AEE84F /* AppDelegate.m in Sources */,
 				9437AD3018B5B1D800AEE84F /* FirstViewController.m in Sources */,
