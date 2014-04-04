@@ -45,9 +45,9 @@
     return ret;
 }
 
-- (NSData*) stringToData:(NSString*) calendar_info
+- (NSData*) stringToData:(NSString*) recipe_info
 {   // Converts json string format to data
-    NSData* data = [calendar_info dataUsingEncoding:NSUTF8StringEncoding];
+    NSData* data = [recipe_info dataUsingEncoding:NSUTF8StringEncoding];
     return data;
 }
 
@@ -75,6 +75,7 @@
         NSString *key = [event objectForKey:@"RecipeID"];
         
         Food *add_food = [Food new_food:title :img :url :star :star_img :key];
+        NSLog(add_food->name);
         
         [all_results addObject: add_food];
     }
@@ -123,7 +124,6 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    NSLog(@"Search Clicked");
     [self searchResults:@"bananas"];
     int prev = [food count];
     food = [searchBar.text componentsSeparatedByString:@","];
@@ -171,7 +171,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%d", [food count]);
     return [food count];
 }
 
