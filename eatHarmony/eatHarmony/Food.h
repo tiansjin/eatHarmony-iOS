@@ -18,7 +18,11 @@
     NSURL* star_img;
     NSString* key;
 }
-
-
++ (Food*) new_food:(NSString*)title
+                  :(NSURL*)img
+                  :(NSURL*)url
+                  :(NSString*)rating
+                  :(NSURL*)stars
+                  :(NSString*)id_key;
 
 @end
