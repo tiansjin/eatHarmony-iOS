@@ -9,7 +9,6 @@
 #import "FirstViewController.h"
 
 @interface FirstViewController ()
-
 @end
 
 @implementation FirstViewController
@@ -18,7 +17,7 @@
 @synthesize tableV;
 
 - (NSString*) searchResults:(NSString*) search_term
-{ //Returns API calls for search query in XML format
+{ //Returns API calls for search query in JSON format
     NSString* key = @"dvxP3Ib8x153K71alv2yhXp8U349s103";
     NSString* url = @"http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw=";
     url = [url stringByAppendingString:(search_term)];
@@ -38,10 +37,9 @@
     if (data) { // Search succeeded!
         output = [[NSString alloc] initWithData:data
                                        encoding:NSUTF8StringEncoding] ;
-        NSLog(@"output:%@",output);
         ret = output;
     }
-    else { // search failed
+    else { // Search failed :(
         ret = [output copy];
     }
     return ret;
@@ -62,17 +60,26 @@
 
 - (NSMutableArray*) getSummary:(NSDictionary*)recipe_info
 {
-    // Returns array of events on calendar
-    NSMutableArray* full_summary = [[NSMutableArray alloc] init];
+    // Returns array of recipe results
+    NSMutableArray* all_results = [[NSMutableArray alloc] init];
     // Create array of dictionaries with key "items"
     NSArray* all_events = [recipe_info objectForKey:@"Results"];
     // Create array of strings with key "summary";
     for (NSDictionary *event in all_events)
     {
         NSString *title = [event objectForKey:@"Title"];
-        [full_summary addObject: summary];
+        NSURL *img = [event objectForKey:@"ImageURL"];
+        NSURL *url = [event objectForKey:@"WebURL"];
+        NSString *star = [event objectForKey:@"StarRating"];
+        NSURL *star_img = [event objectForKey:@"StarRatingImg"];
+        NSString *key = [event objectForKey:@"RecipeID"];
+        
+        Food *add_food = [Food new_food:title :img :url :star :star_img :key];
+        
+        [all_results addObject: add_food];
     }
-    return full_summary; // Returns summary of strings
+    
+    return all_results; // Returns a list of foods from the request
 }
 
 - (void)viewDidLoad

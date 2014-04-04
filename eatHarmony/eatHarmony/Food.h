@@ -16,6 +16,7 @@
     NSURL* web_url;
     NSString* star_rating;
     NSURL* star_img;
+    NSString* key;
 }
 
 

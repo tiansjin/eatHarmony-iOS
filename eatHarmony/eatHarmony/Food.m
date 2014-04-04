@@ -10,19 +10,22 @@
 
 @implementation Food
 
-- (void)food_new:(NSString*)title
++ (Food*) new_food:(NSString*)title
                 :(NSURL*)img
                 :(NSURL*)url
                 :(NSString*)rating
                 :(NSURL*)stars
+                :(NSString*)id_key
 {
-    id object = [[NSClassFromString(@"Food") alloc] init];
-    /*
-    NSString* name;
-    NSURL* main_img;
-    NSURL* web_url;
-    NSString* star_rating;
-    NSURL* star_img; */
+    Food *food = [[Food alloc] init];
+    food->name = title;
+    food->main_img = img;
+    food->web_url = url;
+    food->star_rating = rating;
+    food->star_img = stars;
+    food->key = id_key;
+    
+    return food;
 }
 
 @end
