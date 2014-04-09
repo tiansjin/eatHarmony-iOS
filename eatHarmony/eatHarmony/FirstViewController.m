@@ -42,6 +42,7 @@
     else { // Search failed :(
         ret = [output copy];
     }
+    NSLog(ret);
     return ret;
 }
 

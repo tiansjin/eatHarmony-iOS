@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface SecondViewController : UIViewController
+{
+    UIImageView *image;
+    UITextView *text;
+    UITextView *ingred;
+}
+
+@property (strong, nonatomic) IBOutlet UIImageView *image;
+@property (strong, nonatomic) IBOutlet UITextView *text;
+@property (strong, nonatomic) IBOutlet UITextView *ingred;
 
 @end
