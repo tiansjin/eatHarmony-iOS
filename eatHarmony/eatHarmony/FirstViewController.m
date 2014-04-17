@@ -20,6 +20,7 @@
 { //Returns API calls for search query in JSON format
     NSString* key = @"dvxP3Ib8x153K71alv2yhXp8U349s103";
     NSString* url = @"http://api.bigoven.com/recipes?pg=1&rpp=25&title_kw=";
+    NSLog(search_term);
     url = [url stringByAppendingString:(search_term)];
     url = [url stringByAppendingString:(@"&api_key=")];
     url = [url stringByAppendingString:(key)];
@@ -125,10 +126,10 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [self searchResults:@"bananas"];
-    int prev = [food count];
+    int prev = [items count];
     food = [searchBar.text componentsSeparatedByString:@","];
-    int curr = [food count];
+    [self results];
+    int curr = [items count];
     if (curr > prev)
     {
         NSMutableArray *rows = [[NSMutableArray alloc] init];
@@ -172,11 +173,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [food count];
+    return [items count];
+}
+
+- (void) results
+{
+    NSString *searchTerms = [food componentsJoinedByString:@"+"];
+    searchTerms = [searchTerms stringByReplacingOccurrencesOfString:@" " withString:@""];
+    items = [self getSummary:[self dataToDictionary:[self stringToData:[self searchResults:searchTerms]]]];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     static NSString *CellIdentifier = @"Cell";
    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
@@ -185,11 +195,26 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [food objectAtIndex:indexPath.row];
+    Food *display =[items objectAtIndex:indexPath.row];
+    cell.textLabel.text = display->name;
+    /*
+    NSString *ImageURL = display->web_url;
+    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
+    UIImageView *image;
+    image.image = [UIImage imageWithData:imageData];
+    cell.imageView.image = image;*/
     
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Food *selected = [items objectAtIndex:indexPath.row];
+    NSString *ID = [NSString stringWithFormat:@"%@",selected->key];
+    SecondViewController *SVC = (SecondViewController *)[self.tabBarController.viewControllers objectAtIndex:1];
+    SVC.ID = ID;
+    
+    [self.tabBarController setSelectedIndex:1];
+}
 
 
 @end

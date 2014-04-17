@@ -13,10 +13,12 @@
     UIImageView *image;
     UITextView *text;
     UITextView *ingred;
+    NSString *ID;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet UITextView *text;
 @property (strong, nonatomic) IBOutlet UITextView *ingred;
+@property (strong, nonatomic) NSString *ID;
 
 @end

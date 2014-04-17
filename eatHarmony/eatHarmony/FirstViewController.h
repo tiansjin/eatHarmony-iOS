@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Food.h"
+#import "SecondViewController.h"
 
 @interface FirstViewController : UIViewController <UISearchBarDelegate,UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate>
 {
@@ -15,6 +16,7 @@
     UIImageView *titleLabel;
     UITableView *tableV;
     NSArray *food;
+    NSArray *items;
 }
 
 @property (retain, nonatomic) IBOutlet UISearchBar *searchB;

@@ -16,12 +16,14 @@
 @synthesize image;
 @synthesize text;
 @synthesize ingred;
+@synthesize ID;
 
 - (NSString*) recipe:(NSString*) recipeId
 { //Returns API calls for search query in JSON format
     NSString* key = @"dvxP3Ib8x153K71alv2yhXp8U349s103";
     NSString* url = @"http://api.bigoven.com/recipe/";
     url = [url stringByAppendingString:(recipeId)];
+    NSLog(recipeId);
     url = [url stringByAppendingString:(@"?api_key=")];
     url = [url stringByAppendingString:(key)];
     
@@ -50,9 +52,8 @@
 {
     // Create NSDictionary from the JSON data
     NSLog(recipe_info);
-    NSStringEncoding  encoding;
-    NSData *jsonData = [recipe_info dataUsingEncoding:encoding];
-    NSArray *json = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+    NSData* data = [recipe_info dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     return json;
 }
 
@@ -79,7 +80,9 @@
 
 - (void) setInfo
 {
-    NSDictionary *recipeInfo = [self dataToDictionary:[self recipe:@"185641"]];
+    NSLog(ID);
+    
+    NSDictionary *recipeInfo = [self dataToDictionary:[self recipe:ID]];
     NSString *ImageURL = [recipeInfo objectForKey:@"ImageURL"];
     NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:ImageURL]];
     image.image = [UIImage imageWithData:imageData];
@@ -95,8 +98,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setInfo];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self setInfo];
 }
 
 - (void)didReceiveMemoryWarning
